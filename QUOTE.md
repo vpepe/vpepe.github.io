@@ -4,6 +4,6 @@ title: "Quote"
 permalink: /quote
 ---
 
-<div align="center">
+<div style="text-align: center;">
   foo
 </div>
