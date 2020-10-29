@@ -4,4 +4,6 @@ title: "Quote"
 permalink: /quote
 ---
 
-<h1>"Food"</h1>
+<div align="center">
+  foo
+</div>
