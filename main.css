@@ -21,6 +21,14 @@ h2 {
   text-align:center;
 }
 
+h6 { 
+  font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size:10px; 
+  color: white; 
+  padding: 0 0 0 0; 
+  text-align:bottom;
+}
+
 p {
   font-family:Georgia, serif;
   font-size:75px; 
