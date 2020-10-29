@@ -1,0 +1,50 @@
+<?php
+  $i1 = rand(0, 255);
+  $i2 = rand(0, 255);
+  $i3 = rand(0, 255);
+  $i4 = rand(0, 255);
+  $i5 = rand(0, 255);
+  $i6 = rand(0, 255);
+  $i7 = rand(0, 255);
+  $i8 = rand(0, 255);
+  $i9 = rand(0, 255);
+?>
+<link rel="stylesheet" type="text/css" href="main.css">
+
+<style type="text/css">
+<!--
+body{
+  background: linear-gradient(<?php echo $i>deg, rgb(<?php echo $i1>,<?php echo $i2>,<?php echo $i3>) 0%, rgb(<?php echo $i4>,<?php echo $i5>,<?php echo $i6>) 50%, rgb(<?php echo $i7>,<?php echo $i8>,<?php echo $i9>) 100%);
+background: url(images/<?php echo $selectedBg; ?>) no-repeat;
+}
+-->
+</style>
+
+<body>
+<h1 id="quote"></h1>
+<p id="author"></p>
+</body>
+
+<script>
+  const quotes = [['quote1','author1'],
+                 ['quote2','author2'],
+                 ['quote3','author3'],
+                 ['quote4','author4'],
+                 ['quote5','author5']];
+  
+  Array.prototype.sample = function(){
+    return this[Math.floor(Math.random()*this.length)];
+  }
+  
+  function rgbnum() {
+  min = Math.ceil(0);
+  max = Math.floor(256);
+  return Math.floor(Math.random() * (max - min + 1)) + min; 
+}
+
+  var quote_combo = quotes.sample();
+  document.getElementById("quote").innerHTML = quote_combo[0];
+  document.getElementById("author").innerHTML = quote_combo[1];
+</script>
+
+
