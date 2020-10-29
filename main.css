@@ -30,6 +30,13 @@ h6 {
   vertical-align:bottom;
 }
 
+.footer { 
+       position: fixed;     
+       text-align: center;    
+       bottom: 0px; 
+       width: 100%;
+}  
+
 p {
   font-family:Georgia, serif;
   font-size:75px; 
