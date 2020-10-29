@@ -4,11 +4,13 @@
   Array.prototype.sample = function(){
     return this[Math.floor(Math.random()*this.length)];
   }
-  var quotes = [['quote1','author1'],['quote2','author2']];
- alert(quotes.sample()[0]);
+  const quotes = [['quote1','author1'],['quote2','author2']];
+  var quote_combo = quotes.sample();
+  document.getElementById("quote").innerHTML = quote_combo[0];
+  document.getElementById("author").innerHTML = quote_combo[1];
 </script>
 
 <body>
-<h1>lorem ipsum dolor sit amet a</h1>
-<p>-them</p>
+<h1 id="quote"></h1>
+<p id="author"></p>
 </body>
