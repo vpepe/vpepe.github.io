@@ -1,5 +1,10 @@
 <link rel="stylesheet" type="text/css" href="main.css">
 
+<body>
+<h1 id="quote"></h1>
+<p id="author"></p>
+</body>
+
 <script>
   Array.prototype.sample = function(){
     return this[Math.floor(Math.random()*this.length)];
@@ -9,8 +14,3 @@
   document.getElementById("quote").innerHTML = quote_combo[0];
   document.getElementById("author").innerHTML = quote_combo[1];
 </script>
-
-<body>
-<h1 id="quote"></h1>
-<p id="author"></p>
-</body>
