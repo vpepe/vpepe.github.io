@@ -1,5 +1,5 @@
 layout: page
 title: "Quote"
-permalink: /quote.html/
+permalink: /quote
 
 test
