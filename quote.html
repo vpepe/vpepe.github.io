@@ -34,9 +34,12 @@
                  ['Two gin-scented tears trickled down the side of his nose [...] He loved the IB','George Orwell, "Nineteen Eighty-Four" (adapted)']
                  ];
   
+  var quote_combo = quotes.sample();
+  document.getElementById("quote").innerHTML = quote_combo[0];
+  document.getElementById("author").innerHTML = "-".concat(quote_combo[1]);
   
   $(body).css(
-    "background", "linear-gradient(45deg, rgb("+rn()+","+rn()+","+rn()+") 0%, rgb("+rn()+","+rn()+","+rn()+") 50%, rgb("+rn()+","+rn()+","+rn()+") 100%)"
+    "background", "linear-gradient(45deg, rgb("+rn()+","+rn()+","+rn()+") 0%, rgb("+rn()+","+rn()+","+rn()+") 50%, rgb("+rn()+","+rn()+","+rn()+") 100%) !important"
   );
   
   Array.prototype.sample = function(){
@@ -51,9 +54,7 @@
    return randomNumber(256); 
   }
   
-  var quote_combo = quotes.sample();
-  document.getElementById("quote").innerHTML = quote_combo[0];
-  document.getElementById("author").innerHTML = "-".concat(quote_combo[1]);
+
 </script>
 
 
