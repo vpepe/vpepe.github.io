@@ -16,8 +16,8 @@
 <div class="footer"><h6>By Valerio Pepe | 22pepval@sssrome.it</h6></div>
 </body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-  const quotes = [
+<script>
+    const quotes = [
                  ["Don't let school get in the way of your education",'Edward Steinberg'],
                  ['The plural of regex is regrets','Unknown'],
                  ['If the sun were made of hamsters, the Earth would be incinerated','Michael Schumacher (context unknown)'],
@@ -34,18 +34,16 @@
                  ['Two gin-scented tears trickled down the side of his nose [...] He loved the IB','George Orwell, "Nineteen Eighty-Four" (adapted)']
                  ];
   
-  var quote_combo = quotes.sample();
-  document.getElementById("quote").innerHTML = quote_combo[0];
-  document.getElementById("author").innerHTML = "-".concat(quote_combo[1]);
-  
-  $(body).css(
-    "background", "linear-gradient(45deg, rgb("+rn()+","+rn()+","+rn()+") 0%, rgb("+rn()+","+rn()+","+rn()+") 50%, rgb("+rn()+","+rn()+","+rn()+") 100%) !important"
-  );
-  
   Array.prototype.sample = function(){
     return this[Math.floor(Math.random()*this.length)];
   }
   
+  var quote_combo = quotes.sample();
+  document.getElementById("quote").innerHTML = quote_combo[0];
+  document.getElementById("author").innerHTML = "-".concat(quote_combo[1]);
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
   function randomNumber(max){
     return Math.floor(Math.random()*max);
   }
@@ -54,7 +52,9 @@
    return randomNumber(256); 
   }
   
-
+  $(body).css(
+    "background", "linear-gradient(45deg, rgb("+rn()+","+rn()+","+rn()+") 0%, rgb("+rn()+","+rn()+","+rn()+") 50%, rgb("+rn()+","+rn()+","+rn()+") 100%) !important"
+  );
 </script>
 
 
