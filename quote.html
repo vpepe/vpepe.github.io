@@ -43,7 +43,7 @@
   document.getElementById("author").innerHTML = "-".concat(quote_combo[1]);
 </script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.1/jquery.min.js">
   function randomNumber(max){
     return Math.floor(Math.random()*max);
   }
@@ -52,9 +52,7 @@
    return randomNumber(256); 
   }
   
-  $(body).css(
-    "background", "linear-gradient(45deg, rgb("+rn()+","+rn()+","+rn()+") 0%, rgb("+rn()+","+rn()+","+rn()+") 50%, rgb("+rn()+","+rn()+","+rn()+") 100%) !important"
-  );
+  $(body).css("background", "linear-gradient(45deg, rgb("+rn()+","+rn()+","+rn()+") 0%, rgb("+rn()+","+rn()+","+rn()+") 50%, rgb("+rn()+","+rn()+","+rn()+") 100%)");
 </script>
 
 
