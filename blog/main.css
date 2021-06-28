@@ -6,12 +6,15 @@ body {
   font-family: Arial;
   padding: 20px;
   background: #ffffff;
-  scroll: no;
 }
 
 h2 {
   font-family: Verdana;
- 
+}
+
+blog-title{
+  font-family: Arial;
+  font-size: 26px;
 }
 
 h3 {
