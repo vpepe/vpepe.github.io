@@ -38,9 +38,19 @@ h5 {
   background: linear-gradient(321deg, rgba(255,255,255,1) 15%, rgba(222,114,110,1) 49%, rgba(219,103,99,1) 100%, rgba(82,45,38,1) 100%);
 }
 
-.rightcolumn {   
+.rightcolumn { 
   float: right;
-  width: 75%;
+  width: 37%;
+  padding-left: 10px;
+}
+
+.midcolumn { 
+  margin-left:auto;
+  margin-right:auto;
+  position: relative;
+  top: 20px;
+  left: -100px; 
+  width: 30%;
   padding-left: 10px;
 }
 
@@ -111,8 +121,9 @@ img.right{
 }
 
 @media screen and (max-width: 800px) {
-  .leftcolumn, .rightcolumn {   
+  .leftcolumn, .midcolumn, .rightcolumn {   
     width: 100%;
     padding: 0;
   }
 }
+
