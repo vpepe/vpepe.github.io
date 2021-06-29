@@ -40,14 +40,7 @@ h5 {
 
 .rightcolumn {   
   float: right;
-  width: 37%;
-  padding-left: 10px;
-}
-
-.midcolumn {   
-  margin-left: auto; 
-  margin-right: auto;
-  width: 37%;
+  width: 75%;
   padding-left: 10px;
 }
 
@@ -123,4 +116,3 @@ img.right{
     padding: 0;
   }
 }
-
