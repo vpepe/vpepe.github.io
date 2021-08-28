@@ -1,0 +1,35 @@
+<link rel="stylesheet" type="text/css" href="main.css">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+<link rel="manifest" href="/favicon/site.webmanifest">
+<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<title>2022 Graduation Timer</title>
+
+<body>
+<h2>Graduation Timer for the Class of 2022</h2>
+<h2>How long until this ends?</h2>
+<h1 id="timer"></h1>
+<h6 id="next"></h6>
+<div class="footer"><h6>By Valerio Pepe | 22pepval@sssrome.it</h6></div>
+</body>
+
+<script>
+	var countdown = new Date("May 28, 2022 00:00:00").getTime();
+	function difference(){
+		var timeNow = new Date().getTime();
+		var timestampRemaining = countdown-timeNow;
+		const times = [Math.floor(timestampRemaining/(1000*60*60*24)),Math.floor((timestampRemaining % (1000*60*60*24)) / (1000*60*60)),Math.floor((timestampRemaining%(1000*60*60))/(1000*60)),Math.floor((timestampRemaining%(1000*60))/(1000))];
+		
+		document.getElementById("timer").innerHTML = times[0]+"days "+times[1]+"hr "+times[2]+"min "+times[3]+"sec ";
+		
+		if (timestampRemaining < 0){
+			document.getElementById("timer").innerHTML = "Graduated! Congrats to the Class of 2022!";
+			document.getElementById("next").innerHTML = "Now for the next awful timer: ";
+		}
+	}
+	var update = setInterval(difference,1000);
+</script>
+
