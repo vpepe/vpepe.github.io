@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         :root {
-            --primary-color: #24305E;
+            --primary-color: #063e9e;
             --secondary-color: #F76C6C;
             --accent-color: #A8D0E6;
             --light-bg: #F8F9FA;
@@ -78,21 +78,21 @@
         }
 
         .hero {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
             max-width: 1000px;
             margin: 0 auto;
             padding: 3rem 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
             gap: 2.5rem;
-            align-items: center;
         }
 
         .profile-image {
+            float: right;
             max-width: 320px;
             border-radius: 8px;
             box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            margin: 0 auto;
-            display: block;
+            margin-left: 2rem;
+            margin-bottom: 1rem;
             overflow: hidden;
         }
 
@@ -100,6 +100,11 @@
             width: 100%;
             height: auto;
             display: block;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
         }
 
         .hero-content h1 {
@@ -116,7 +121,7 @@
         .section {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 2.5rem 1.5rem;
+            padding: 1rem 1.5rem;
         }
 
         .section-title {
@@ -136,8 +141,6 @@
             height: 3px;
             background-color: var(--secondary-color);
         }
-
-        /* Research interests section removed for simplification */
 
         .publications {
             margin-top: 1.5rem;
@@ -275,8 +278,6 @@
             color: var(--primary-color);
         }
 
-        /* Affiliation section simplified */
-
         .contact {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -382,17 +383,20 @@
             color: var(--primary-color);
         }
 
+        .about-content {
+            overflow: hidden;
+        }
+
         /* Responsive styles */
         @media screen and (max-width: 768px) {
-            .hero {
-                grid-template-columns: 1fr;
-                padding: 2rem 1.5rem;
-                text-align: center;
+            .profile-image {
+                float: none;
+                margin: 0 auto 1.5rem;
+                display: block;
             }
 
-            .profile-image {
-                order: -1;
-                margin-bottom: 1rem;
+            .hero-content {
+                text-align: center;
             }
 
             .section-title::after {
@@ -441,25 +445,20 @@
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Valerio Pepe</h1>
-            <p>Class of 2026, <a href="https://seas.harvard.edu/">Harvard University</a>. Concurrent BA/MS in Computer Science and Mind, Brain, and Behavior.</p>
-            <p>I'm broadly passionate about the interface between language and thought, with a focus on the inductive biases that favor language learning and reasoning in both humans and machines.</p>
-        </div>
-        <div class="hero-image">
+    <section id="about" class="hero section">
+        <div class="about-content">
             <div class="profile-image">
                 <img src="valerio-vertical.png" alt="Profile Picture">
             </div>
+            
+            <div class="hero-content">
+                <h1>Valerio Pepe</h1>
+                <p>I am an undergraduate student at <a href="https://seas.harvard.edu/">Harvard University</a> in the class of 2026, studying towards a concurrent BA/MS in Computer Science and Mind, Brain, and Behavior, and advised by <a href="https://www.eecs.harvard.edu/shieber/">Prof. Stuart Shieber</a>.</p>
+                <p>I'm broadly passionate about the interface between language and thought, with a focus on the inductive biases that favor language learning and reasoning in both humans and machines. The overarching goal of my research is to develop machines that acquire language and perform reasoning with the compositional flexibility and sample efficiency characteristic of humans.</p>
+                <p>I am currently affiliated with the Computational Cognitive Science Group at MIT Brain & Cognitive Sciences and the Language and Intelligence Group at the MIT Computer Science and AI Lab, where I am fortunate to be supervised by Gabriel Grand, Prof. Joshua Tenenbaum, and Prof. Jacob Andreas.</p>
+                <p>Previously, I have worked in the George Church Lab at the Wyss Institute at Harvard, the Sabatini Lab at Harvard Medical School, and the WOLF Lab at the Harvard Department of Linguistics.</p>
+            </div>
         </div>
-    </section>
-
-    <section id="about" class="section">
-        <h2 class="section-title">About Me</h2>
-        <p>I am an undergraduate student at Harvard University in the class of 2026, studying Computer Science and Mind, Brain, and Behavior, and advised by <a href="https://www.eecs.harvard.edu/shieber/">Prof. Stuart Shieber</a>.</p>
-        <p>My overarching research goal is to develop machines that acquire language and perform reasoning with the compositional flexibility and sample efficiency characteristic of humans.</p>
-        <p>I am currently affiliated with the Computational Cognitive Science Group at MIT Brain & Cognitive Sciences and the Language and Intelligence Group at the MIT Computer Science and AI Lab, where I am fortunate to be supervised by Gabriel Grand, Prof. Joshua Tenenbaum, and Prof. Jacob Andreas.</p>
-        <p>Previously, I have worked in the George Church Lab at the Wyss Institute at Harvard, the Sabatini Lab at Harvard Medical School, and the WOLF Lab at the Harvard Department of Linguistics.</p>
     </section>
 
     <section id="publications" class="section">
@@ -471,7 +470,7 @@
                 <div class="publication-authors">Gabriel Grand, <span class="highlight-author">Valerio Pepe</span>, Jacob Andreas, Joshua B. Tenenbaum</div>
                 <div class="publication-venue">NeurIPS'24, The First Workshop on System-2 Reasoning at Scale (2024)</div>
                 <div class="publication-links">
-                    <a href="https://neurips.cc/virtual/2024/104323" target="_blank"><i class="fa fa-file-pdf"></i> NeurIPS</a>
+                    <a href="https://neurips.cc/virtual/2024/104323" target="_blank"><i class="fas fa-file-pdf"></i> NeurIPS</a>
                 </div>
             </div>
             
@@ -480,7 +479,7 @@
                 <div class="publication-authors">Gabriel Grand, <span class="highlight-author">Valerio Pepe</span>, Jacob Andreas, Joshua B. Tenenbaum</div>
                 <div class="publication-venue">Proceedings of the Annual Meeting of the Cognitive Science Society, 46. (2024)</div>
                 <div class="publication-links">
-                    <a href="https://escholarship.org/uc/item/6gx0t2wj" target="_blank"><i class="fa fa-file-pdf"></i> EScholarship</a>
+                    <a href="https://escholarship.org/uc/item/6gx0t2wj" target="_blank"><i class="fas fa-file-pdf"></i> EScholarship</a>
                 </div>
             </div>
             
@@ -489,7 +488,7 @@
                 <div class="publication-authors">Merrick Pierson Smela*, <span class="highlight-author">Valerio Pepe*</span>, Steven Lubbe, Evangelos Kiskinis, George M. Church</div>
                 <div class="publication-venue">Stem Cell Reports. (2024)</div>
                 <div class="publication-links">
-                    <a href="https://www.biorxiv.org/content/10.1101/2023.09.27.559766v2" target="_blank"><i class="fa fa-file-pdf"></i> bioRxiv</a>
+                    <a href="https://www.cell.com/stem-cell-reports/fulltext/S2213-6711(24)00242-X" target="_blank"><i class="fas fa-file-pdf"></i> Stem Cell Reports</a>
                 </div>
                 <p style="font-size: 0.8rem; margin-top: 0.3rem;">* indicates equal contributions by multiple authors.</p>
             </div>
@@ -498,58 +497,96 @@
 
     <section id="projects" class="section">
         <h2 class="section-title">Projects</h2>
-        
-        <div class="projects">
+
+
             <div class="project-card">
                 <div class="project-image">
-                    <div style="font-size: 2.5rem;">♟️</div>
+                    <div style="font-size: 2.5rem;">🏎️</div>
                 </div>
                 <div class="project-content">
-                    <h3 class="project-title">Language-Informed Program Sampling</h3>
-                    <p class="project-description">Developed a framework for using natural language to guide program synthesis in game environments like Battleship.</p>
+                    <h3 class="project-title">AdaSPEED: Adaptive Self-Speculative Early Exit Decoding</h3>
+                    <p class="project-description">Developed a method to dynamically select the number of tokens to be generated by a speculative decoding system, speeding up inference by up to 40%.</p>
                     <div class="project-tags">
-                        <span class="project-tag">NLP</span>
-                        <span class="project-tag">Program Synthesis</span>
-                        <span class="project-tag">Bayesian Inference</span>
+                        <span class="project-tag">Speculative Decoding</span>
+                        <span class="project-tag">BranchyNet</span>
+                        <span class="project-tag">Efficient Machine Learning</span>
                     </div>
                     <div class="project-links">
-                        <a href="projects/lips_project.pdf" target="_blank"><i class="fa fa-file-pdf"></i> View PDF</a>
+                        <a href="projects/adaspeed.pdf" target="_blank"><i class="fas fa-file-pdf"></i> View PDF</a>
                     </div>
                 </div>
             </div>
-            
+
+            <div class="projects">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div style="font-size: 2.5rem;">🔁</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Controllable Benchmarks for LLM Unlearning</h3>
+                        <p class="project-description">Developed methods and benchmarks for controlling the similarity of the retain and unlearn set in machine unlearning, suggesting that the focus of further unlearning research should be on better datasets for unlearning, not only better algorithms.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Machine Unlearning</span>
+                            <span class="project-tag">Natural Langugage Processing</span>
+                            <span class="project-tag">LLM Benchmarking</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="projects/benchmarks.pdf" target="_blank"><i class="fas fa-file-pdf"></i> View PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="projects">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div style="font-size: 2.5rem;">⚖️</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Individual Fairness for Image Classification</h3>
+                        <p class="project-description">Developed a method to use individual fairness to impose inference-time constraints on image-classifying neural networks, guaranteeing better adversarial robustness with no retraining, finetuning, or additional inference costs.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Algorithmic Fairness</span>
+                            <span class="project-tag">Adversarial Robustness</span>
+                            <span class="project-tag">FGSM</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="projects/individual_fairness.pdf" target="_blank"><i class="fas fa-file-pdf"></i> View PDF</a>
+                        </div>
+                    </div>
+                </div>
+
             <div class="project-card">
                 <div class="project-image">
-                    <div style="font-size: 2.5rem;">🧬</div>
+                    <div style="font-size: 2.5rem;">🛡️</div>
                 </div>
                 <div class="project-content">
-                    <h3 class="project-title">SeqVerify</h3>
-                    <p class="project-description">Created an accessible analysis tool for cell line genomic integrity, contamination, and gene editing outcomes.</p>
+                    <h3 class="project-title">Adversarial Robustness in Self-Explaining Neural Networks</h3>
+                    <p class="project-description">Explored which types of noise fool Self-Explaining Neural Networks, and what types of defenses could be implemented in order to mitigate their weaknesses.</p>
                     <div class="project-tags">
-                        <span class="project-tag">Bioinformatics</span>
-                        <span class="project-tag">Genomics</span>
-                        <span class="project-tag">Data Analysis</span>
+                        <span class="project-tag">Explainability</span>
+                        <span class="project-tag">Adversarial Robustness</span>
+                        <span class="project-tag">SENNs</span>
                     </div>
                     <div class="project-links">
-                        <a href="projects/seqverify_project.pdf" target="_blank"><i class="fa fa-file-pdf"></i> View PDF</a>
+                        <a href="projects/senns.pdf" target="_blank"><i class="fas fa-file-pdf"></i> View PDF</a>
                     </div>
                 </div>
             </div>
-            
+
             <div class="project-card">
                 <div class="project-image">
-                    <div style="font-size: 2.5rem;">🤖</div>
+                    <div style="font-size: 2.5rem;">🗣️</div>
                 </div>
                 <div class="project-content">
-                    <h3 class="project-title">LLM-Based Question Generation</h3>
-                    <p class="project-description">Exploring how large language models can be used to generate rational questions in strategic environments.</p>
+                    <h3 class="project-title">Historical Linguistics-Informed Distinctive Feature Theory</h3>
+                    <p class="project-description">Trained a sparse autoencoder on a graph representation of historical sound shifts in order to derive a historically-grounded distinctive feature set for phonology.</p>
                     <div class="project-tags">
-                        <span class="project-tag">LLMs</span>
-                        <span class="project-tag">Cognitive Science</span>
-                        <span class="project-tag">Question Generation</span>
+                        <span class="project-tag">Computational Linguistics</span>
+                        <span class="project-tag">Interpretability</span>
+                        <span class="project-tag">Graph Representation Learning</span>
                     </div>
                     <div class="project-links">
-                        <a href="projects/llm_question_generation.pdf" target="_blank"><i class="fa fa-file-pdf"></i> View PDF</a>
+                        <a href="projects/distinctive_features.pdf" target="_blank"><i class="fas fa-file-pdf"></i> View PDF</a>
                     </div>
                 </div>
             </div>
@@ -557,42 +594,52 @@
     </section>
 
     <section id="contact" class="section">
-        <h2 class="section-title">Contact</h2>
+        <h2 class="section-title">Social Media / Contact</h2>
         
         <div class="contact">
             <div class="contact-method">
                 <div class="contact-icon">
-                    <i class="fa fa-envelope"></i>
+                    <i class="fab fa-twitter"></i>
                 </div>
                 <div class="contact-info">
-                    <a href="mailto:vpepe@college.harvard.edu">vpepe@college.harvard.edu</a>
+                    <a href="https://twitter.com/valerpepe">Twitter/X</a>
                 </div>
             </div>
             
             <div class="contact-method">
                 <div class="contact-icon">
-                    <i class="fa fa-github"></i>
+                    <i class="fab fa-github"></i>
                 </div>
                 <div class="contact-info">
-                    <a href="https://github.com/valerioperpe" target="_blank">GitHub</a>
+                    <a href="https://github.com/vpepe" target="_blank">GitHub</a>
+                </div>
+            </div>
+            
+
+            <div class="contact-method">
+                <div class="contact-icon">
+                    <i class="fab fa-linkedin"></i>
+                </div>
+                <div class="contact-info">
+                    <a href="https://www.linkedin.com/in/valerio-pepe/" target="_blank">LinkedIn</a>
                 </div>
             </div>
             
             <div class="contact-method">
                 <div class="contact-icon">
-                    <i class="fa fa-linkedin"></i>
+                    <i class="fas fa-graduation-cap"></i>
                 </div>
                 <div class="contact-info">
-                    <a href="https://linkedin.com/in/valerioperpe" target="_blank">LinkedIn</a>
+                    <a href="https://scholar.google.com/citations?user=HWuzs1QAAAAJ&hl=en" target="_blank">Google Scholar</a>
                 </div>
             </div>
-            
+
             <div class="contact-method">
                 <div class="contact-icon">
-                    <i class="fa fa-graduation-cap"></i>
+                    <i class="fas fa-paper-plane"></i>
                 </div>
                 <div class="contact-info">
-                    <a href="https://scholar.google.com/citations?user=valerioperpe" target="_blank">Google Scholar</a>
+                    <a href="mailto:valeriopepe@college.harvard.edu" target="_blank">valeriopepe@college.harvard.edu</a>
                 </div>
             </div>
         </div>
@@ -602,16 +649,16 @@
         <div class="footer-content">
             <p>© 2025 Valerio Pepe | Harvard University</p>
             <div class="social-links">
-                <a href="https://github.com/valerioperpe" target="_blank"><i class="fa fa-github"></i></a>
-                <a href="https://linkedin.com/in/valerioperpe" target="_blank"><i class="fa fa-linkedin"></i></a>
-                <a href="https://twitter.com/valerioperpe" target="_blank"><i class="fa fa-twitter"></i></a>
+                <a href="https://github.com/vpepe" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/valerio-pepe/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/valerpepe" target="_blank"><i class="fab fa-twitter"></i></a>
             </div>
             <p>Last Updated: March 2025</p>
         </div>
     </footer>
 
     <a href="#" class="back-to-top" id="backToTop">
-        <i class="fa fa-arrow-up"></i>
+        <i class="fas fa-arrow-up"></i>
     </a>
 
     <script>
