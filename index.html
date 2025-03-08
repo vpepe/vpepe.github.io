@@ -4,176 +4,810 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valerio Pepe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        html, body {
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-        body {
-            background-color: #F0F0F0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            color: rgb(0, 0, 0);
+        :root {
+            --primary-color: #24305E;
+            --secondary-color: #F76C6C;
+            --accent-color: #A8D0E6;
+            --light-bg: #F8F9FA;
+            --dark-text: #2C3E50;
+            --light-text: #ECF0F1;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            box-sizing: border-box;
         }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 70px;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--dark-text);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
         header {
-            width: 50%;
-            padding: 20px;
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
             display: flex;
-            box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.1);
-            flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            background-color: white;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
-        header h1 {
-            margin: 0;
-            margin-left: 20px;
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
         }
-        header h2 {
-            margin: 0;
-        }
-        nav {
+
+        nav ul {
             display: flex;
-            gap: 15px;
+            list-style: none;
+            gap: 2rem;
         }
+
         nav a {
+            color: var(--light-text);
             text-decoration: none;
-            color: rgb(0, 0, 0);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover {
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            margin: 0 auto;
+            display: block;
+            background-color: #e0e0e0;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-style: italic;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.02);
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .hero-content .highlight {
+            color: var(--secondary-color);
+        }
+
+        .hero-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .research-interests {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .interest-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .interest-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .interest-card i {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .interest-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .publications {
+            margin-top: 2rem;
+        }
+
+        .publication-item {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .publication-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .publication-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .publication-authors {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-author {
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        .publication-venue {
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .publication-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .publication-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background-color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-image i {
+            font-size: 3rem;
+            color: var(--primary-color);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .project-description {
+            color: var(--dark-text);
+            margin-bottom: 1rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tag {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .project-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .affiliation {
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .affiliation-icon {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            min-width: 2rem;
+            text-align: center;
+        }
+
+        .affiliation-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .affiliation-content p {
+            color: var(--dark-text);
+        }
+
+        .contact {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-method:hover {
+            transform: translateY(-3px);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--secondary-color);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .social-links a {
+            color: var(--light-text);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--secondary-color);
+            color: white;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        /* Custom icon fallbacks */
+        .icon-fallback {
+            width: 2rem;
+            height: 2rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
             font-weight: bold;
         }
-        main {
-            max-width: 800px;
-            width: 100%;
-            padding: 20px;
-        }
-        .main-profile-section {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            background-color: white;
-            overflow: visible;
-            box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.1);
-            padding: 40px;
-            margin-top: 20px;
-        }
-        .profile-section {
-            display: flex;
-            overflow: visible;
-            flex-direction: column;
-            align-items: flex-start;
-            background-color: white;
-            box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.1);
-            padding: 40px;
-            padding-top: 0;
-            margin-top: 20px;
-        }
-        .profile-header {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        .profile-content img {
-            float: left;
-            width: 250px;
-            height: 265px;
-            margin-right: 20px;
-            margin-bottom: 10px;
-        }
-    
-        .profile-content p {
-            font-size: 16px;
-            line-height: 1.3;
-            margin: 0 0 10px 0;
+
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 2rem 1.5rem;
+                text-align: center;
+            }
+
+            .profile-image {
+                order: -1;
+                margin-bottom: 1.5rem;
+            }
+
+            .section {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .section-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
         }
 
-        .profile-content a {
-            font-size: 16px;
-            line-height: 1.3;
-            color: blue;
-            margin: 0 0 10px 0;
-            text-decoration: dashed;
-        }
-        @media screen and (max-width: 1400px) {
-        header, main {
-            width: 100%;
-        }
-        }
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 576px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
 
-        header h1 {
-            font-size: 22px;
-            margin-bottom: 5px;
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            nav ul {
+                gap: 0.8rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            .affiliation {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .publication-item, .interest-card {
+                padding: 1.2rem;
+            }
         }
-        nav a {
-            font-size: 16px;
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
-        header {
-            flex-direction: column;
-        }
-        .profile-content {
-            text-align: justify;
-            text-align: inter-word;
-        }
-        .main-profile-section {
-            margin-top: 0px;
-        }
-        .profile-content img {
-        top: -50px; /* Adjust the offset as needed */
-        left: -50px; /* Adjust the offset as needed */
-        width: 100%; /* Adjust the size as needed */
-        height: 100%;
-        margin-bottom: 25px;
-        }
+
+        a:hover {
+            color: var(--primary-color);
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Valerio Pepe</h1>
-        <nav>
-            <a href="#">About</a>
-        </nav>
+        <div class="header-container">
+            <div class="logo">Valerio Pepe</div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main>
-        <div class="main-profile-section">             
-            <div class="profile-content">
-                    <img src="valerio-vertical.png" alt="Profile Picture">
-                    <p>I am an undergraduate student at <a href="https://seas.harvard.edu/">Harvard University</a> in the class of 2026, studying Computer Science 
-                        and Mind, Brain, and Behavior, and advised by <a href="https://www.eecs.harvard.edu/shieber/">Prof. Stuart Shieber</a>.</p>
-                    <p>I'm broadly passionate about the interface between language and thought, with a focus on inductive biases in learning in both 
-                        humans and machines. </p>
-                        
-                    <p>    My overarching research goal is to develop machines that acquire language and perform reasoning with
-                        the compositional flexibility and sample efficiency characteristic of humans. 
-                        At the moment, my research is characterized by the use of techniques from natural language 
-                        processing and program synthesis.</p>
-                    <p> I am working as an undergraduate researcher at MIT Brain and Cognitive Sciences and the MIT Computer Science and AI Lab in the <a href="https://cocosci.mit.edu/">Computational Cognitive Science</a> and <a href="http://lingo.csail.mit.edu">Language and Intelligence</a> Groups, where I am fortunate
-                        to be supervised by <a href="https://gabegrand.com">Gabriel Grand</a>, <a href="https://web.mit.edu/jda/www/">Prof. Jacob Andreas</a> and <a href="https://web.mit.edu/cocosci/josh.html">Prof. Joshua Tenenbaum</a>.</p>
-                    <p>Previously, I have worked in the <a href="https://churchlab.hms.harvard.edu/">George Church Lab</a> at the Wyss Institute at Harvard, the <a href="https://sabatini.hms.harvard.edu/">Sabatini Lab</a>  
-                     at Harvard Medical School, and the <a href="https://fieldlinguistics.github.io/">WOLF Lab</a> at the Harvard Department of Linguistics.</p>
-            </div>
-        </div>
-        <div class="profile-section">             
-            <div class="profile-content">
-                    <h2>Publications</h2>
 
-                    <p><b><i>A Llama Sunk My Battleship! Asking Rational Questions with LLMs via Bayesian Inference</i></b> Gabriel Grand, 
-                    <u>Valerio Pepe</u>, Jacob Andreas, Joshua B. Tenenbaum. NeurIPS'24, The First Workshop on System-2 Reasoning at Scale (2024) [<a href="https://neurips.cc/virtual/2024/104323">NeurIPS</a>]</p>
-                
-                    <p><b><i>Loose LIPS Sink Ships: Asking Questions in Battleship with Language-Informed Program Sampling.</i></b> Gabriel Grand, 
-                    <u>Valerio Pepe</u>, Jacob Andreas, Joshua B. Tenenbaum. Proceedings of the Annual Meeting of the Cognitive Science Society, 46. (2024) [<a href="https://escholarship.org/uc/item/6gx0t2wj">EScholarship</a>]</p>
-                    
-                    <p><b><i>SeqVerify: An accessible analysis tool for cell line genomic integrity, contamination, and gene editing outcomes.</i></b> Merrick
-                    Pierson Smela*, <u>Valerio Pepe*</u>, Steven Lubbe, Evangelos Kiskinis, George M. Church. Stem Cell Reports. (2024) [<a href="https://www.biorxiv.org/content/10.1101/2023.09.27.559766v2">bioRxiv</a>]</p>
-                    
-                    <p style="font-size: 12px;"> Note: '*' indicates equal contributions by multiple authors.</p>
-            </div>
-        </div>            
- 
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Valerio Pepe</h1>
+            <p>Undergraduate Researcher at <span class="highlight">Harvard University</span> studying Computer Science and Mind, Brain, and Behavior.</p>
+            <p>I'm broadly passionate about the interface between language and thought, with a focus on inductive biases in learning in both humans and machines.</p>
         </div>
-    </main>
+        <div class="hero-image">
+            <div class="profile-image">
+                Place your image here<br>
+                (valerio-vertical.png)
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2 class="section-title">About Me</h2>
+        <p>I am an undergraduate student at <a href="https://seas.harvard.edu/">Harvard University</a> in the class of 2026, studying Computer Science and Mind, Brain, and Behavior, and advised by <a href="https://www.eecs.harvard.edu/shieber/">Prof. Stuart Shieber</a>.</p>
+        <p>My overarching research goal is to develop machines that acquire language and perform reasoning with the compositional flexibility and sample efficiency characteristic of humans. At the moment, my research is characterized by the use of techniques from natural language processing and program synthesis.</p>
+        
+        <h3 style="margin-top: 2rem; color: var(--primary-color);">Current Affiliations</h3>
+        <div class="affiliations">
+            <div class="affiliation">
+                <div class="affiliation-icon">
+                    <span class="icon-fallback">🧠</span>
+                </div>
+                <div class="affiliation-content">
+                    <h3>MIT Brain and Cognitive Sciences</h3>
+                    <p>Undergraduate Researcher in the <a href="https://cocosci.mit.edu/">Computational Cognitive Science Group</a>, supervised by <a href="https://web.mit.edu/cocosci/josh.html">Prof. Joshua Tenenbaum</a>.</p>
+                </div>
+            </div>
+            <div class="affiliation">
+                <div class="affiliation-icon">
+                    <span class="icon-fallback">💻</span>
+                </div>
+                <div class="affiliation-content">
+                    <h3>MIT Computer Science and AI Lab</h3>
+                    <p>Undergraduate Researcher in the <a href="http://lingo.csail.mit.edu">Language and Intelligence Group</a>, supervised by <a href="https://gabegrand.com">Gabriel Grand</a> and <a href="https://web.mit.edu/jda/www/">Prof. Jacob Andreas</a>.</p>
+                </div>
+            </div>
+        </div>
+        
+        <h3 style="margin-top: 2rem; color: var(--primary-color);">Previous Affiliations</h3>
+        <div class="affiliations">
+            <div class="affiliation">
+                <div class="affiliation-icon">
+                    <span class="icon-fallback">🧬</span>
+                </div>
+                <div class="affiliation-content">
+                    <h3>George Church Lab</h3>
+                    <p>Researcher at the <a href="https://churchlab.hms.harvard.edu/">Church Lab</a>, Wyss Institute at Harvard.</p>
+                </div>
+            </div>
+            <div class="affiliation">
+                <div class="affiliation-icon">
+                    <span class="icon-fallback">🔬</span>
+                </div>
+                <div class="affiliation-content">
+                    <h3>Sabatini Lab</h3>
+                    <p>Researcher at the <a href="https://sabatini.hms.harvard.edu/">Sabatini Lab</a>, Harvard Medical School.</p>
+                </div>
+            </div>
+            <div class="affiliation">
+                <div class="affiliation-icon">
+                    <span class="icon-fallback">🗣️</span>
+                </div>
+                <div class="affiliation-content">
+                    <h3>WOLF Lab</h3>
+                    <p>Researcher at the <a href="https://fieldlinguistics.github.io/">WOLF Lab</a>, Harvard Department of Linguistics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="research" class="section">
+        <h2 class="section-title">Research Interests</h2>
+        <p>My research explores the intersection of language and cognition, with applications in artificial intelligence and cognitive science.</p>
+        
+        <div class="research-interests">
+            <div class="interest-card">
+                <div class="icon-fallback">🤖</div>
+                <h3>Natural Language Processing</h3>
+                <p>Exploring computational models that can understand and generate human language with the flexibility and efficiency of human cognition.</p>
+            </div>
+            <div class="interest-card">
+                <div class="icon-fallback">⚙️</div>
+                <h3>Program Synthesis</h3>
+                <p>Developing methods to automatically generate programs from specifications, with applications in AI systems that can learn and reason symbolically.</p>
+            </div>
+            <div class="interest-card">
+                <div class="icon-fallback">🧠</div>
+                <h3>Cognitive Science</h3>
+                <p>Investigating the cognitive mechanisms underlying human language acquisition and reasoning to inform more human-like AI systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications" class="section">
+        <h2 class="section-title">Publications</h2>
+        
+        <div class="publications">
+            <div class="publication-item">
+                <div class="publication-title">A Llama Sunk My Battleship! Asking Rational Questions with LLMs via Bayesian Inference</div>
+                <div class="publication-authors">Gabriel Grand, <span class="highlight-author">Valerio Pepe</span>, Jacob Andreas, Joshua B. Tenenbaum</div>
+                <div class="publication-venue">NeurIPS'24, The First Workshop on System-2 Reasoning at Scale (2024)</div>
+                <div class="publication-links">
+                    <a href="https://neurips.cc/virtual/2024/104323" target="_blank">📄 NeurIPS</a>
+                </div>
+            </div>
+            
+            <div class="publication-item">
+                <div class="publication-title">Loose LIPS Sink Ships: Asking Questions in Battleship with Language-Informed Program Sampling</div>
+                <div class="publication-authors">Gabriel Grand, <span class="highlight-author">Valerio Pepe</span>, Jacob Andreas, Joshua B. Tenenbaum</div>
+                <div class="publication-venue">Proceedings of the Annual Meeting of the Cognitive Science Society, 46. (2024)</div>
+                <div class="publication-links">
+                    <a href="https://escholarship.org/uc/item/6gx0t2wj" target="_blank">📄 EScholarship</a>
+                </div>
+            </div>
+            
+            <div class="publication-item">
+                <div class="publication-title">SeqVerify: An accessible analysis tool for cell line genomic integrity, contamination, and gene editing outcomes</div>
+                <div class="publication-authors">Merrick Pierson Smela*, <span class="highlight-author">Valerio Pepe*</span>, Steven Lubbe, Evangelos Kiskinis, George M. Church</div>
+                <div class="publication-venue">Stem Cell Reports. (2024)</div>
+                <div class="publication-links">
+                    <a href="https://www.biorxiv.org/content/10.1101/2023.09.27.559766v2" target="_blank">📄 bioRxiv</a>
+                </div>
+                <p style="font-size: 0.8rem; margin-top: 0.5rem;">* indicates equal contributions by multiple authors.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2 class="section-title">Projects</h2>
+        
+        <div class="projects">
+            <div class="project-card">
+                <div class="project-image">
+                    <div style="font-size: 3rem;">♟️</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Language-Informed Program Sampling</h3>
+                    <p class="project-description">Developed a framework for using natural language to guide program synthesis in game environments like Battleship.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">NLP</span>
+                        <span class="project-tag">Program Synthesis</span>
+                        <span class="project-tag">Bayesian Inference</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">
+                    <div style="font-size: 3rem;">🧬</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">SeqVerify</h3>
+                    <p class="project-description">Created an accessible analysis tool for cell line genomic integrity, contamination, and gene editing outcomes.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Bioinformatics</span>
+                        <span class="project-tag">Genomics</span>
+                        <span class="project-tag">Data Analysis</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">
+                    <div style="font-size: 3rem;">🤖</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">LLM-Based Question Generation</h3>
+                    <p class="project-description">Exploring how large language models can be used to generate rational questions in strategic environments.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">LLMs</span>
+                        <span class="project-tag">Cognitive Science</span>
+                        <span class="project-tag">Question Generation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2 class="section-title">Contact</h2>
+        
+        <div class="contact">
+            <div class="contact-method">
+                <div class="contact-icon">
+                    ✉️
+                </div>
+                <div class="contact-info">
+                    <a href="mailto:vpepe@college.harvard.edu">vpepe@college.harvard.edu</a>
+                </div>
+            </div>
+            
+            <div class="contact-method">
+                <div class="contact-icon">
+                    📊
+                </div>
+                <div class="contact-info">
+                    <a href="https://github.com/valerioperpe" target="_blank">GitHub</a>
+                </div>
+            </div>
+            
+            <div class="contact-method">
+                <div class="contact-icon">
+                    🔗
+                </div>
+                <div class="contact-info">
+                    <a href="https://linkedin.com/in/valerioperpe" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+            
+            <div class="contact-method">
+                <div class="contact-icon">
+                    🎓
+                </div>
+                <div class="contact-info">
+                    <a href="https://scholar.google.com/citations?user=valerioperpe" target="_blank">Google Scholar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 Valerio Pepe | Harvard University</p>
+            <div class="social-links">
+                <a href="https://github.com/valerioperpe" target="_blank">GitHub</a> | 
+                <a href="https://linkedin.com/in/valerioperpe" target="_blank">LinkedIn</a> | 
+                <a href="https://twitter.com/valerioperpe" target="_blank">Twitter</a>
+            </div>
+            <p>Last Updated: March 2025</p>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop">
+        ⬆️
+    </a>
+
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if (this.getAttribute('href') === '#') {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
