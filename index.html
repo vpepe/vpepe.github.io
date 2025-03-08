@@ -38,32 +38,32 @@
         header {
             background-color: var(--primary-color);
             color: var(--light-text);
-            padding: 1rem 0;
+            padding: 0.8rem 0;
             position: sticky;
             top: 0;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 600;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         nav a {
@@ -71,73 +71,57 @@
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
-            padding: 0.5rem 0;
-            border-bottom: 2px solid transparent;
         }
 
         nav a:hover {
-            border-bottom: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
         }
 
         .hero {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 4rem 2rem;
-            gap: 3rem;
+            padding: 3rem 1.5rem;
+            gap: 2.5rem;
             align-items: center;
         }
 
         .profile-image {
-            max-width: 400px;
+            max-width: 320px;
             border-radius: 8px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
             margin: 0 auto;
             display: block;
-            background-color: #e0e0e0;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            font-style: italic;
+            overflow: hidden;
         }
 
-        .profile-image:hover {
-            transform: scale(1.02);
+        .profile-image img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         .hero-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
             color: var(--primary-color);
         }
 
-        .hero-content .highlight {
-            color: var(--secondary-color);
-        }
-
         .hero-content p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-size: 1rem;
         }
 
         .section {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 4rem 2rem;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-        }
-
-        .section:last-child {
-            border-bottom: none;
+            padding: 2.5rem 1.5rem;
         }
 
         .section-title {
-            font-size: 2rem;
-            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
             color: var(--primary-color);
             position: relative;
             padding-bottom: 0.5rem;
@@ -148,58 +132,29 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 100px;
+            width: 80px;
             height: 3px;
             background-color: var(--secondary-color);
         }
 
-        .research-interests {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .interest-card {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .interest-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        .interest-card i {
-            font-size: 2rem;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-        }
-
-        .interest-card h3 {
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
+        /* Research interests section removed for simplification */
 
         .publications {
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
 
         .publication-item {
             background-color: white;
-            padding: 1.5rem;
+            padding: 1.2rem;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            margin-bottom: 1.5rem;
-            transition: transform 0.3s ease;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.05);
+            margin-bottom: 1.2rem;
+            transition: transform 0.2s ease;
         }
 
         .publication-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.08);
         }
 
         .publication-title {
@@ -209,7 +164,7 @@
         }
 
         .publication-authors {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
 
         .highlight-author {
@@ -219,7 +174,8 @@
 
         .publication-venue {
             font-style: italic;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
         }
 
         .publication-links {
@@ -232,7 +188,7 @@
             color: var(--secondary-color);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: color 0.2s ease;
         }
 
         .publication-links a:hover {
@@ -241,51 +197,47 @@
 
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
         }
 
         .project-card {
             background-color: white;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease;
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.12);
         }
 
         .project-image {
             width: 100%;
-            height: 200px;
+            height: 160px;
             background-color: var(--accent-color);
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .project-image i {
-            font-size: 3rem;
-            color: var(--primary-color);
-        }
-
         .project-content {
-            padding: 1.5rem;
+            padding: 1.2rem;
         }
 
         .project-title {
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             color: var(--primary-color);
         }
 
         .project-description {
             color: var(--dark-text);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
         }
 
         .project-tags {
@@ -298,9 +250,10 @@
         .project-tag {
             background-color: var(--accent-color);
             color: var(--primary-color);
-            padding: 0.3rem 0.6rem;
+            padding: 0.2rem 0.5rem;
             border-radius: 4px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
+            font-weight: 500;
         }
 
         .project-links {
@@ -312,57 +265,38 @@
             color: var(--secondary-color);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
         }
 
         .project-links a:hover {
             color: var(--primary-color);
         }
 
-        .affiliation {
-            margin-bottom: 2rem;
-            display: flex;
-            gap: 1.5rem;
-            align-items: flex-start;
-        }
-
-        .affiliation-icon {
-            font-size: 1.5rem;
-            color: var(--secondary-color);
-            min-width: 2rem;
-            text-align: center;
-        }
-
-        .affiliation-content h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-
-        .affiliation-content p {
-            color: var(--dark-text);
-        }
+        /* Affiliation section simplified */
 
         .contact {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
         }
 
         .contact-method {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            transition: transform 0.3s ease;
+            gap: 0.8rem;
+            transition: transform 0.2s ease;
         }
 
         .contact-method:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
         .contact-icon {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--secondary-color);
         }
 
@@ -370,7 +304,7 @@
             color: var(--primary-color);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: color 0.2s ease;
         }
 
         .contact-info a:hover {
@@ -381,26 +315,27 @@
             background-color: var(--primary-color);
             color: var(--light-text);
             text-align: center;
-            padding: 2rem 0;
+            padding: 1.5rem 0;
+            margin-top: 1rem;
         }
 
         .footer-content {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin: 1.5rem 0;
+            gap: 1.2rem;
+            margin: 1rem 0;
         }
 
         .social-links a {
             color: var(--light-text);
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
+            font-size: 1rem;
+            transition: color 0.2s ease;
         }
 
         .social-links a:hover {
@@ -409,22 +344,22 @@
 
         .back-to-top {
             position: fixed;
-            bottom: 2rem;
-            right: 2rem;
+            bottom: 1.5rem;
+            right: 1.5rem;
             background-color: var(--secondary-color);
             color: white;
-            width: 3rem;
-            height: 3rem;
+            width: 2.5rem;
+            height: 2.5rem;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             opacity: 0;
             transform: translateY(20px);
             pointer-events: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
         }
 
         .back-to-top.visible {
@@ -435,20 +370,16 @@
 
         .back-to-top:hover {
             background-color: var(--primary-color);
-            transform: translateY(-5px);
         }
 
-        /* Custom icon fallbacks */
-        .icon-fallback {
-            width: 2rem;
-            height: 2rem;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--secondary-color);
-            color: white;
-            border-radius: 50%;
-            font-weight: bold;
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--primary-color);
         }
 
         /* Responsive styles */
@@ -461,15 +392,7 @@
 
             .profile-image {
                 order: -1;
-                margin-bottom: 1.5rem;
-            }
-
-            .section {
-                padding: 2.5rem 1.5rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
+                margin-bottom: 1rem;
             }
 
             .section-title::after {
@@ -485,12 +408,12 @@
         @media screen and (max-width: 576px) {
             .header-container {
                 flex-direction: column;
-                gap: 1rem;
-                padding: 1rem;
+                gap: 0.8rem;
+                padding: 0.8rem;
             }
 
             .logo {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
 
             nav ul {
@@ -500,26 +423,6 @@
             nav a {
                 font-size: 0.9rem;
             }
-
-            .affiliation {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .publication-item, .interest-card {
-                padding: 1.2rem;
-            }
-        }
-
-        a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--primary-color);
         }
     </style>
 </head>
@@ -530,7 +433,6 @@
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#research">Research</a></li>
                     <li><a href="#publications">Publications</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -556,8 +458,9 @@
         <h2 class="section-title">About Me</h2>
         <p>I am an undergraduate student at Harvard University in the class of 2026, studying Computer Science and Mind, Brain, and Behavior, and advised by <a href="https://www.eecs.harvard.edu/shieber/">Prof. Stuart Shieber</a>.</p>
         <p>My overarching research goal is to develop machines that acquire language and perform reasoning with the compositional flexibility and sample efficiency characteristic of humans.</p>
-        <p>I am currently affiliated with the Computational Cognitive Science Group at MIT Brain & Cognitive Sciences and the Language and Intelligence Group at the MIT Computer Science and AI Lab, where I am fortunate to be supervised by Gabriel Grand, Prof. Joshua Tenenbaum, and Prof. Jacob Andreas.
+        <p>I am currently affiliated with the Computational Cognitive Science Group at MIT Brain & Cognitive Sciences and the Language and Intelligence Group at the MIT Computer Science and AI Lab, where I am fortunate to be supervised by Gabriel Grand, Prof. Joshua Tenenbaum, and Prof. Jacob Andreas.</p>
         <p>Previously, I have worked in the George Church Lab at the Wyss Institute at Harvard, the Sabatini Lab at Harvard Medical School, and the WOLF Lab at the Harvard Department of Linguistics.</p>
+    </section>
 
     <section id="publications" class="section">
         <h2 class="section-title">Publications</h2>
@@ -568,7 +471,7 @@
                 <div class="publication-authors">Gabriel Grand, <span class="highlight-author">Valerio Pepe</span>, Jacob Andreas, Joshua B. Tenenbaum</div>
                 <div class="publication-venue">NeurIPS'24, The First Workshop on System-2 Reasoning at Scale (2024)</div>
                 <div class="publication-links">
-                    <a href="https://neurips.cc/virtual/2024/104323" target="_blank">📄 NeurIPS</a>
+                    <a href="https://neurips.cc/virtual/2024/104323" target="_blank"><i class="fa fa-file-pdf"></i> NeurIPS</a>
                 </div>
             </div>
             
@@ -577,7 +480,7 @@
                 <div class="publication-authors">Gabriel Grand, <span class="highlight-author">Valerio Pepe</span>, Jacob Andreas, Joshua B. Tenenbaum</div>
                 <div class="publication-venue">Proceedings of the Annual Meeting of the Cognitive Science Society, 46. (2024)</div>
                 <div class="publication-links">
-                    <a href="https://escholarship.org/uc/item/6gx0t2wj" target="_blank">📄 EScholarship</a>
+                    <a href="https://escholarship.org/uc/item/6gx0t2wj" target="_blank"><i class="fa fa-file-pdf"></i> EScholarship</a>
                 </div>
             </div>
             
@@ -586,9 +489,9 @@
                 <div class="publication-authors">Merrick Pierson Smela*, <span class="highlight-author">Valerio Pepe*</span>, Steven Lubbe, Evangelos Kiskinis, George M. Church</div>
                 <div class="publication-venue">Stem Cell Reports. (2024)</div>
                 <div class="publication-links">
-                    <a href="https://www.biorxiv.org/content/10.1101/2023.09.27.559766v2" target="_blank">📄 bioRxiv</a>
+                    <a href="https://www.biorxiv.org/content/10.1101/2023.09.27.559766v2" target="_blank"><i class="fa fa-file-pdf"></i> bioRxiv</a>
                 </div>
-                <p style="font-size: 0.8rem; margin-top: 0.5rem;">* indicates equal contributions by multiple authors.</p>
+                <p style="font-size: 0.8rem; margin-top: 0.3rem;">* indicates equal contributions by multiple authors.</p>
             </div>
         </div>
     </section>
@@ -599,7 +502,7 @@
         <div class="projects">
             <div class="project-card">
                 <div class="project-image">
-                    <div style="font-size: 3rem;">♟️</div>
+                    <div style="font-size: 2.5rem;">♟️</div>
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">Language-Informed Program Sampling</h3>
@@ -609,12 +512,15 @@
                         <span class="project-tag">Program Synthesis</span>
                         <span class="project-tag">Bayesian Inference</span>
                     </div>
+                    <div class="project-links">
+                        <a href="projects/lips_project.pdf" target="_blank"><i class="fa fa-file-pdf"></i> View PDF</a>
+                    </div>
                 </div>
             </div>
             
             <div class="project-card">
                 <div class="project-image">
-                    <div style="font-size: 3rem;">🧬</div>
+                    <div style="font-size: 2.5rem;">🧬</div>
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">SeqVerify</h3>
@@ -624,12 +530,15 @@
                         <span class="project-tag">Genomics</span>
                         <span class="project-tag">Data Analysis</span>
                     </div>
+                    <div class="project-links">
+                        <a href="projects/seqverify_project.pdf" target="_blank"><i class="fa fa-file-pdf"></i> View PDF</a>
+                    </div>
                 </div>
             </div>
             
             <div class="project-card">
                 <div class="project-image">
-                    <div style="font-size: 3rem;">🤖</div>
+                    <div style="font-size: 2.5rem;">🤖</div>
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">LLM-Based Question Generation</h3>
@@ -638,6 +547,9 @@
                         <span class="project-tag">LLMs</span>
                         <span class="project-tag">Cognitive Science</span>
                         <span class="project-tag">Question Generation</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="projects/llm_question_generation.pdf" target="_blank"><i class="fa fa-file-pdf"></i> View PDF</a>
                     </div>
                 </div>
             </div>
@@ -650,7 +562,7 @@
         <div class="contact">
             <div class="contact-method">
                 <div class="contact-icon">
-                    ✉️
+                    <i class="fa fa-envelope"></i>
                 </div>
                 <div class="contact-info">
                     <a href="mailto:vpepe@college.harvard.edu">vpepe@college.harvard.edu</a>
@@ -659,7 +571,7 @@
             
             <div class="contact-method">
                 <div class="contact-icon">
-                    📊
+                    <i class="fa fa-github"></i>
                 </div>
                 <div class="contact-info">
                     <a href="https://github.com/valerioperpe" target="_blank">GitHub</a>
@@ -668,7 +580,7 @@
             
             <div class="contact-method">
                 <div class="contact-icon">
-                    🔗
+                    <i class="fa fa-linkedin"></i>
                 </div>
                 <div class="contact-info">
                     <a href="https://linkedin.com/in/valerioperpe" target="_blank">LinkedIn</a>
@@ -677,7 +589,7 @@
             
             <div class="contact-method">
                 <div class="contact-icon">
-                    🎓
+                    <i class="fa fa-graduation-cap"></i>
                 </div>
                 <div class="contact-info">
                     <a href="https://scholar.google.com/citations?user=valerioperpe" target="_blank">Google Scholar</a>
@@ -690,16 +602,16 @@
         <div class="footer-content">
             <p>© 2025 Valerio Pepe | Harvard University</p>
             <div class="social-links">
-                <a href="https://github.com/valerioperpe" target="_blank">GitHub</a> | 
-                <a href="https://linkedin.com/in/valerioperpe" target="_blank">LinkedIn</a> | 
-                <a href="https://twitter.com/valerioperpe" target="_blank">Twitter</a>
+                <a href="https://github.com/valerioperpe" target="_blank"><i class="fa fa-github"></i></a>
+                <a href="https://linkedin.com/in/valerioperpe" target="_blank"><i class="fa fa-linkedin"></i></a>
+                <a href="https://twitter.com/valerioperpe" target="_blank"><i class="fa fa-twitter"></i></a>
             </div>
             <p>Last Updated: March 2025</p>
         </div>
     </footer>
 
     <a href="#" class="back-to-top" id="backToTop">
-        ⬆️
+        <i class="fa fa-arrow-up"></i>
     </a>
 
     <script>
