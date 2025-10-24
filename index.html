@@ -525,29 +525,147 @@
                 padding: 3rem 1.5rem 2rem;
                 flex-direction: column;
                 align-items: center;
-                text-align: center;
+                text-align: left;
+                gap: 2rem;
             }
 
             .profile-photo {
-                width: 160px;
-                height: 160px;
+                width: 140px;
+                height: 140px;
+            }
+
+            .hero-text {
+                width: 100%;
             }
 
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
             }
 
             .social-links {
-                justify-content: center;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: 1rem;
+            }
+
+            .social-links a {
+                font-size: 1.1rem;
             }
 
             .section {
-                padding: 3rem 1.5rem;
+                padding: 2.5rem 1.5rem;
             }
 
-            .header-container, nav ul {
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .header-container {
                 flex-direction: column;
                 gap: 1rem;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .pub-title {
+                font-size: 1.15rem;
+            }
+
+            .pub-venue-inline {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.8rem;
+            }
+
+            .media-grid, .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-emoji {
+                font-size: 2rem;
+            }
+
+            .back-to-top {
+                bottom: 1.5rem;
+                right: 1.5rem;
+                width: 44px;
+                height: 44px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            html {
+                font-size: 15px;
+            }
+
+            .hero {
+                padding: 2rem 1rem 1.5rem;
+            }
+
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.9rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            nav ul {
+                gap: 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            .logo {
+                font-size: 0.9rem;
+            }
+
+            .publication {
+                padding: 1.5rem;
+            }
+
+            .pub-title {
+                font-size: 1.05rem;
+            }
+
+            .pub-authors, .pub-link, .pub-venue {
+                font-size: 0.9rem;
+            }
+
+            .media-item, .project-card {
+                padding: 1.5rem;
+            }
+
+            .project-title, .media-title {
+                font-size: 1rem;
+            }
+
+            .footer-links {
+                gap: 1.5rem;
             }
         }
     </style>
@@ -577,11 +695,11 @@
             <div class="hero-description">
                 <p>I am an undergraduate student at <a href="https://seas.harvard.edu/" target="_blank">Harvard University</a> in the class of 2026, studying towards a concurrent BA/MS in Computer Science and Mind, Brain, and Behavior, and advised by <a href="https://www.eecs.harvard.edu/shieber/" target="_blank">Prof. Stuart Shieber</a>.</p>
                 
-                <p>I'm broadly passionate about the interface between language and thought, with a focus on the inductive biases that favor language learning and reasoning in both humans and machines. I'm also interested in AI safety from both a technical (interpretability, alignment, control) and a political (preparedness, economic impacts, international collaboration) perspective, and work with the <a href="https://haist.ai/" target="_blank">AI Safety Student Team</a> at Harvard towards these goals. </p>
+                <p>I'm broadly passionate about the interface between language and thought, with a focus on the inductive biases that favor language learning and reasoning in both humans and machines.</p>
+                
+                <p>I'm also interested in AI safety from both a technical (interpretability, control) and a political perspective, and work with the <a href="https://haist.ai/" target="_blank">AI Safety Student Team</a> at Harvard towards these goals.</p>
                 
                 <p>I am currently affiliated with the <a href="https://cocosci.mit.edu/" target="_blank">Computational Cognitive Science Group</a> at MIT Brain & Cognitive Sciences and the <a href="https://lingo.csail.mit.edu/" target="_blank">Language and Intelligence Group</a> at the MIT Computer Science and AI Lab, where I am fortunate to be supervised by <a href="https://www.gabegrand.com/" target="_blank">Gabriel Grand</a>, <a href="https://web.mit.edu/cocosci/josh.html" target="_blank">Prof. Joshua Tenenbaum</a>, and <a href="https://www.mit.edu/~jda/" target="_blank">Prof. Jacob Andreas</a>.</p>
-                
-                <p>Previously, I have worked in the <a href="https://churchlab.hms.harvard.edu/" target="_blank">George Church Lab</a> at the Wyss Institute at Harvard, the <a href="https://sabatini.hms.harvard.edu/" target="_blank">Sabatini Lab</a> at Harvard Medical School, and the <a href="https://fieldlinguistics.github.io/team/" target="_blank">Working on Language in the Field (WOLF) Lab</a> at the Harvard Department of Linguistics.</p>
             </div>
             <div class="social-links">
                 <a href="mailto:valeriopepe@college.harvard.edu" title="Email"><i class="fas fa-envelope"></i> valeriopepe@college.harvard.edu</a>
